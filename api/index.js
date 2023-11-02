@@ -15,6 +15,11 @@ app.use(express.json());
 const PORT = process.env.PORT || 5000;
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
+app.use((err, req, res, next) => {
+  const statusCode = err.statusCode || 500;
+  const message = err.message || "Internal Server Error";
+  return res.status(statusCode).json({ success: false, message, statusCode });
+});
 
 app.listen(PORT, function (req, res) {
   console.log(`server starting on port ${PORT}`);
