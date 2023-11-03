@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignIn from "./pages/SignIn";
-import SignOut from "./pages/SignOut";
+import SignUp from "./pages/SignUp";
 import Payments from "./pages/Payments";
 import Tenants from "./pages/Tenants";
 import Utilities from "./pages/Utilities";
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/signout" element={<SignOut />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/payment" element={<Payments />} />
         <Route path="/tenants" element={<Tenants />} />
         <Route path="/utilities" element={<Utilities />} />
